@@ -56,6 +56,8 @@ int ys []= {
 void setup() {
   size(w, h);
   
+  frameRate(30);
+  
   textFont(loadFont("Dialog.plain-10.vlw"));
 
   OscProperties properties = new OscProperties();
@@ -78,7 +80,7 @@ void setup() {
   img = new PImage(80,60); 
   theBlobDetection = new BlobDetection(img.width, img.height);
   theBlobDetection.setPosDiscrimination(true);
-  theBlobDetection.setThreshold(0.2f);
+  theBlobDetection.setThreshold(0.05);
   
 }
 
@@ -86,6 +88,10 @@ void setup() {
 //////////////////////////////////////////////////////////////////////////////////////
 
 void draw() {
+  
+  background(0);
+  
+  
   for (int i = 0; i < pipeline.length; i++) {
     if (pipeline[i].available()) {
       pipeline[i].read();
