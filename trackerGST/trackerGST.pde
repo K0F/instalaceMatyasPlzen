@@ -1,3 +1,13 @@
+
+////////////////////////////////
+import processing.video.*;
+import blobDetection.*;
+
+BlobDetection theBlobDetection;
+PImage img;
+boolean newFrame=false;
+
+
 ////////////////////////////////////////////////////////////////////////////
 import oscP5.*;
 import netP5.*;
@@ -45,6 +55,8 @@ int ys []= {
 
 void setup() {
   size(w, h);
+  
+  textFont(loadFont("Dialog.plain-10.vlw"));
 
   OscProperties properties = new OscProperties();
 
@@ -61,6 +73,13 @@ void setup() {
     println(pipeline[i].getPipeline());
     pipeline[i].play();
   }
+  
+  
+  img = new PImage(80,60); 
+  theBlobDetection = new BlobDetection(img.width, img.height);
+  theBlobDetection.setPosDiscrimination(true);
+  theBlobDetection.setThreshold(0.2f);
+  
 }
 
 
@@ -71,6 +90,7 @@ void draw() {
     if (pipeline[i].available()) {
       pipeline[i].read();
       image(pipeline[i], xs[i], ys[i], width/2, height/2);
+      
     }
   }
 
@@ -78,6 +98,8 @@ void draw() {
 
   float brightestValue = TRESHOLD; // Brightness of the brightest video pixel
 
+
+/*
   int index = 0;
   int objcnt = 0;
   
@@ -99,10 +121,15 @@ void draw() {
       index++;
     }
   }
+  */
+  
+  
+      img.copy(g, 0, 0, width, height, 
+        0, 0, img.width, img.height);
+      fastblur(img, 2);
+    theBlobDetection.computeBlobs(img.pixels);
+    drawBlobsAndEdges(true,true);
 
-  fill(255, 0, 0);
-  SendData(brightestX, brightestY, 1, 4);
-  ellipse(brightestX, brightestY, 10, 10);
   
 }
 
