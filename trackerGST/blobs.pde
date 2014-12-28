@@ -39,7 +39,8 @@ void drawBlobsAndEdges(boolean drawBlobs, boolean drawEdges)
         stroke(255,0,0);
         fill(255,0,0);
         text(n,XX,YY);
-         SendData(XX, YY, n, 5);
+        if(n<5) 
+	SendData(XX, YY, n, 5);
  noFill();
         rect(
           b.xMin*width,b.yMin*height,
