@@ -81,7 +81,8 @@ void setup() {
   theBlobDetection = new BlobDetection(img.width, img.height);
   theBlobDetection.setPosDiscrimination(true);
   theBlobDetection.setThreshold(0.05);
-  
+
+  frame.setTitle("catgame tracker v0.5");
 }
 
 
