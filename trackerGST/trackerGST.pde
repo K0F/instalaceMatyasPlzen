@@ -56,7 +56,7 @@ int ys []= {
 void setup() {
   size(w, h);
   
-  frameRate(30);
+  frameRate(15);
   
   textFont(loadFont("Dialog.plain-10.vlw"));
 
@@ -71,7 +71,7 @@ void setup() {
 
 
   for (int i = 0; i < pipeline.length; i++) {  
-    pipeline[i] = new GSPipeline(this, "v4l2src device=/dev/video"+(i)+" ! ffmpegcolorspace ! videorate ! video/x-raw-rgb, width=320,framerate=30/1");  
+    pipeline[i] = new GSPipeline(this, "v4l2src device=/dev/video"+(i)+" ! ffmpegcolorspace ! videorate ! video/x-raw-rgb, width=320,framerate=15/1");  
     println(pipeline[i].getPipeline());
     pipeline[i].play();
   }
