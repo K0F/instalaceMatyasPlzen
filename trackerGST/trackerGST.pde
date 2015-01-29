@@ -22,7 +22,7 @@ int w = 640;
 int h = 480;
 
 
-float TRESHOLD = 120;
+float TRESHOLD = 30;
 float SMOOTHING  = 10.0;
 
 int MAXDETI = 5;
@@ -54,9 +54,9 @@ int ys []= {
 ////////////////////////////////////////////////////////////////////////////
 
 void setup() {
-  size(w, h);
+  size(w, h,P2D);
   
-  frameRate(15);
+  frameRate(30);
   
   textFont(loadFont("Dialog.plain-10.vlw"));
 
@@ -71,7 +71,7 @@ void setup() {
 
 
   for (int i = 0; i < pipeline.length; i++) {  
-    pipeline[i] = new GSPipeline(this, "v4l2src device=/dev/video"+(i)+" ! ffmpegcolorspace ! videorate ! video/x-raw-rgb, width=320,framerate=15/1");  
+    pipeline[i] = new GSPipeline(this, "v4l2src device=/dev/video"+(i)+" ! ffmpegcolorspace ! videorate ! video/x-raw-rgb,width=320,framerate=60/1");  
     println(pipeline[i].getPipeline());
     pipeline[i].play();
   }
@@ -90,7 +90,7 @@ void setup() {
 
 void draw() {
   
-  background(0);
+//  background(0);
   
   
   for (int i = 0; i < pipeline.length; i++) {
