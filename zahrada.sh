@@ -7,7 +7,7 @@
 xrandr --output HDMI-0 --mode 1280x800 --rotate right
 xrandr --output VGA-0 --mode 1280x800 --rotate left --right-of HDMI-0
 
-(cd /home/kof/sketchbook/instalaceMatyasPlzen/trackerGST/ && git add . ; git commit -am "change @ production machine`date`"; git pull)&
+(cd /home/kof/sketchbook/instalaceMatyasPlzen/ && git add . ; git commit -am "change @ production machine`date`"; git pull)&
 #(sleep 1s && cd /home/kof/processing-2.2.1 && ./processing-java --sketch=/home/kof/sketchbook/instalaceMatyasPlzen/trackerGST/ --output=/tmp/trash --force --run) &
 (sleep 1s && cd sketchbook/instalaceMatyasPlzen/trackerGST/application.linux/ && ./trackerGST) &
 
