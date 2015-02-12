@@ -3940,3 +3940,8 @@ Found path: /tmp/192.168.0.150/catgame/catGame-3-linux.x86_64
 Mono path[0] = '/tmp/192.168.0.150/catgame/catGame-3-linux_Data/Managed'
 Mono path[1] = '/tmp/192.168.0.150/catgame/catGame-3-linux_Data/Mono'
 Mono config path = '/tmp/192.168.0.150/catgame/catGame-3-linux_Data/Mono/etc'
+Set current directory to /tmp/192.168.0.150/catgame
+Found path: /tmp/192.168.0.150/catgame/catGame-3-linux.x86_64
+Mono path[0] = '/tmp/192.168.0.150/catgame/catGame-3-linux_Data/Managed'
+Mono path[1] = '/tmp/192.168.0.150/catgame/catGame-3-linux_Data/Mono'
+Mono config path = '/tmp/192.168.0.150/catgame/catGame-3-linux_Data/Mono/etc'
