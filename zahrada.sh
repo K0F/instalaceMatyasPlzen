@@ -18,7 +18,7 @@ xrandr --output VGA-0 --mode 1280x800 --rotate left --right-of HDMI-0
 
 #(sleep 15s && cd /home/kof/Downloads/catGame_linuBuild_ver1_0 && ./catGame-3-linux.x86_64 -popupwindow -screen-width 1600 -screen-height 1280) &
 
-(sleep 1s && (cd /home/kof && ./updateGame.sh)&
+(sleep 1s && (cd /home/kof/sketchBook/instalaceMatyasPlzen/ && ./updateGame.sh)&
 # || (sleep 15s && cd /home/kof/Downloads/catGame_linuBuild_ver1_0 && ./catGame-3-linux.x86_64 -popupwindow -screen-width 1600 -screen-height 1280) )) &
 
 #
