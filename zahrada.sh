@@ -4,6 +4,10 @@
 #xrandr --output DVI-D-0  --rotate left
 #xrandr --output VGA-0  --right-of DVI-D-0 --rotate right
 
+export DISPLAY=:0.0
+xset -dpms
+xset s off
+
 xrandr --output HDMI-0 --mode 1280x800 --rotate right
 xrandr --output VGA-0 --mode 1280x800 --rotate left --right-of HDMI-0
 
